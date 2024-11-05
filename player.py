@@ -5,7 +5,7 @@ from constants import PLAYER_RADIUS, WHITE
 
 class Player(CircleShape):
     def __init__(self, x, y):
-        rotation = 0
+        self.rotation = 0
         super().__init__(x, y, PLAYER_RADIUS)
         self.color = WHITE
 

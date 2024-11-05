@@ -9,12 +9,12 @@ def main():
     pygame.init()
     #display.set_mode() makes a GUI
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption("Asteroids")
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
-    print(f"FPS is set at {FPS}")
     clock = pygame.time.Clock()
-
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     #Game Loop Flag! WE GO!
     playing = True
