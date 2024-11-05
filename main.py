@@ -1,6 +1,8 @@
 # https://www.pygame.org/docs/ref/pygame.html
 import pygame
 from constants import *
+from player import Player
+
 
 def main():
     #initialize pygame before main()
@@ -10,7 +12,7 @@ def main():
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
-    #more constants? should I send these constsants.py
+    print(f"FPS is set at {FPS}")
     clock = pygame.time.Clock()
 
 
