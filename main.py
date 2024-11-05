@@ -25,6 +25,7 @@ def main():
                 playing = False
         
         screen.fill(BLACK)
+        player.draw(screen)
         pygame.display.flip()
         clock.tick(FPS)
     pygame.quit()
