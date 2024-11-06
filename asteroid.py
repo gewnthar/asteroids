@@ -10,7 +10,7 @@ class Asteroid(CircleShape):
         super().__init__(x, y, radius)
         self.velocity = pygame.Vector2(0,0)
 
-        for group in Asteroid.conatiners:
+        for group in Asteroid.containers:
             group.add(self)
 
     def draw(self, screen):
