@@ -1,3 +1,4 @@
+import sys
 import pygame
 from circleshape import CircleShape
 from constants import *
@@ -10,9 +11,23 @@ class Player(CircleShape):
         super().__init__(x, y, PLAYER_RADIUS)
         self.color = WHITE
         self.shoot_timer = 0
+        self.shield = 0
 
         for group in Player.containers:
             group.add(self)
+
+    def add_shield(self,amount):
+        self.shield = min(self.shield + amount, MAX_SHIELD_STRENGTH)
+
+    def take_damage(self, damage):
+        if self.shield > 0:
+            self.shield -= damage
+            if self.shield <0:
+                self.shield = 0
+        else:
+            print("Player has taken dmage!")
+            pygame.quit()
+            sys.exit()
 
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
